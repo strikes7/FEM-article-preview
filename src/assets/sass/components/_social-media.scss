@@ -1,0 +1,50 @@
+@use "../abstract/" as *;
+
+.share-media {
+  box-sizing: border-box;
+  border-end-end-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  block-size: 100%;
+  @extend %inlinePadding;
+  inset-inline-start: -100%;
+  inline-size: 100%;
+  z-index: 2;
+  background-color: $clr-neutral-500;
+  transition: transform 0.4s ease-out, opacity 0.2s ease-in-out;
+  opacity: 0;
+
+  &.visible {
+    --translate: translateX(100%);
+    transform: var(--translate);
+    opacity: 1;
+  }
+
+  &__title {
+    font-size: $fs-400;
+    color: $clr-neutral-300;
+
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    margin-block: 0;
+    margin-inline-end: 1.25rem;
+  }
+}
+
+[class^="share-media__network"] {
+  &:hover > svg,
+  &:focus-visible > svg {
+    transform: scale(1.5);
+    transform-origin: center;
+  }
+  & > svg {
+    transition: transform 0.2s;
+    width: 1.2rem;
+  }
+
+  &:not(:last-child) {
+    margin-inline-end: 1.125rem;
+    display: block;
+  }
+}

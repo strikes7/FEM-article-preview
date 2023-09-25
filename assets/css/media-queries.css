@@ -1,0 +1,41 @@
+@media screen and (min-width: 57.5em) {
+  .article-preview {
+    overflow: visible;
+    max-width: 45.625rem;
+    grid-template-columns: 1fr 61%;
+    grid-template-rows: repeat(3, min-content);
+  }
+  .article-preview__title {
+    font-size: 1.25rem;
+  }
+  .article-preview__thumbnail {
+    grid-row: span 3;
+    aspect-ratio: 1/1;
+    object-position: 0;
+  }
+  .article-preview__footer {
+    padding-block: 0 1.875rem;
+  }
+  .share-media {
+    inline-size: 15.5rem;
+    block-size: 3.375rem;
+    padding-block: 1.25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    inset-inline-start: 59.5%;
+    inset-block-start: -5rem;
+  }
+  .share-media::after {
+    content: "";
+    inline-size: 1rem;
+    block-size: 1rem;
+    background-color: inherit;
+    position: absolute;
+    inset-block-end: -0.5rem;
+    rotate: 45deg;
+  }
+  .share-media.visible {
+    --translate: none;
+  }
+}

@@ -1,0 +1,5 @@
+@use "utilities" as *;
+
+%inlinePadding {
+  padding-inline: clamp(toRem(32), 4vw, toRem(42));
+}

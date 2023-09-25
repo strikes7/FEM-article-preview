@@ -1,0 +1,49 @@
+@use "abstract/" as *;
+
+@media screen and (min-width: 57.5em) {
+  .article-preview {
+    overflow: visible;
+    max-width: toRem(730);
+    grid-template-columns: 1fr 61%;
+    grid-template-rows: repeat(3, min-content);
+
+    &__title {
+      font-size: $fs-600;
+    }
+
+    &__thumbnail {
+      grid-row: span 3;
+      aspect-ratio: 1/1;
+      object-position: 0;
+    }
+  }
+
+  .article-preview__footer {
+    padding-block: 0 toRem(30);
+  }
+
+  .share-media {
+    inline-size: toRem(248);
+    block-size: toRem(54);
+    padding-block: 1.25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    inset-inline-start: 59.5%;
+    inset-block-start: -5rem;
+
+    &::after {
+      content: "";
+      inline-size: 1rem;
+      block-size: 1rem;
+      background-color: inherit;
+      position: absolute;
+      inset-block-end: -0.5rem;
+      rotate: 45deg;
+    }
+
+    &.visible {
+      --translate: none;
+    }
+  }
+}
